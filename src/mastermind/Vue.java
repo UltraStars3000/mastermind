@@ -12,11 +12,18 @@ public class Vue extends Frame implements WindowListener{
 		
 		this.setLayout(new BorderLayout());
 
-		VuePropositions panneauHaut = new VuePropositions(ctrl, modl);
-		this.add(panneauHaut, BorderLayout.NORTH);
+		Panel VueClavier = new Panel();
+		int x = 50;
+		for (int i = 0;i<Modele.COULEURS.length;i++) {
+			Button bouton = new Button("Bouton "+i);
+			bouton.setBounds(x, 50, 50, 50);
+			bouton.setBackground(Modele.COULEURS[i]);
+			
+		}
+		this.add(VueClavier, BorderLayout.NORTH);
 
-		VueClavier panneauBas = new VueClavier(ctrl, modl);
-		this.add(panneauBas, BorderLayout.SOUTH);
+		Canvas VuePropositions = new Canvas();
+		this.add(VuePropositions, BorderLayout.SOUTH);
 
 		this.addWindowListener(this);
 		this.setTitle("Mastermind");
@@ -44,7 +51,7 @@ public class Vue extends Frame implements WindowListener{
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		// TODO Auto-generated method stub
+		System.exit(0); 
 		
 	}
 
