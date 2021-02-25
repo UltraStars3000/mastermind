@@ -11,7 +11,7 @@ public class Modele extends Observable {
 	static public enum Etat{EN_COURS,GAGNE,PERDU};
 	
 	Etat etat;
-	Rangee combinaison;
+	Rangee combinaison = new Rangee();
 	Rangee[] propositions = new Rangee[N_TENTATIVES];
 	int tentative;
 	
@@ -19,7 +19,7 @@ public class Modele extends Observable {
 	public Modele() {
 		this.etat = Etat.EN_COURS;
 		for(int i=0;i<Modele.DIFFICULTE;i++) {
-			this.combinaison.jetons[i] = Modele.COULEURS[(int)(Math.random()*(Modele.COULEURS.length+1))];
+			this.combinaison.jetons[i] = Modele.COULEURS[(int)(Math.random()*(Modele.COULEURS.length))];
 		}
 		tentative = 0;
 	}

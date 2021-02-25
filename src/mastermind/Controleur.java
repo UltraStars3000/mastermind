@@ -1,9 +1,19 @@
 package mastermind;
 
-public class Controleur {
 
+import java.awt.*;
+import java.awt.event.*;
+
+public class Controleur implements ActionListener  {
+	
 	public Controleur(Modele modl) {
-		// TODO Auto-generated constructor stub
+		System.out.print("Salut");
+
 	}
 
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		Button bouton = (Button) arg0.getSource();	
+	}
+	
 }
